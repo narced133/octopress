@@ -1,0 +1,35 @@
+// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+
+#content .flexslider {
+  border: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 658px;
+  @include shadow-box;
+}
+
+#content article .flexslider img {
+  background: none;
+  border: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  background-color: #eeeeee;
+}
+
+.flexslider ul.slides li {
+  background-color: white;
+}
+
+.flexslider ul.slides div {
+  font-family: $sans;
+  font-weight: 300;
+  text-align: center;
+  margin: 3px 0 0 0;
+}

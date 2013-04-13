@@ -1,0 +1,31 @@
+<script type="text/javascript">
+  $(function(){
+    $('.flexslider').flexslider({
+	easing: "linear",
+	animation: "slide",
+	start: function(slider){
+	    function loadHandler(){
+		var maxHeight = 0;
+		slider.slides.find("img").each(function(){
+		    maxHeight = Math.max(maxHeight, this.clientHeight);
+		});
+		slider.slides.find("img").each(function(){
+		    var $this = $(this);
+		    var height = this.clientHeight;
+		    var diff = maxHeight - height;
+		    if(diff > 0){
+			$this.css("margin", ""+diff/2+"px 0");
+		    }
+		});
+	    }
+	    slider.slides.find("img").each(function(){
+		if(this.clientHeight == 0){
+		    $(this).load(loadHandler);
+		}
+	    });
+	    loadHandler();
+	  }
+    });
+    $('.flexslider').flexslider("pause");
+  });
+</script>
